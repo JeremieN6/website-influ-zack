@@ -37,8 +37,41 @@
 
 <!-- Self-Hosted Video -->
 <div class="me-video-container">
-	<video class="video" muted autoplay loop src="videos/background.mp4"></video>	
+	<div id="player"></div>
 </div>
+
+<script>
+	// Charger l'API YouTube
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	// Créer le lecteur YouTube
+	var player;
+	function onYouTubeIframeAPIReady() {
+		player = new YT.Player('player', {
+			videoId: 'Xlyl2gocSFI',
+			playerVars: {
+				'autoplay': 1,
+				'controls': 0,
+				'loop': 1,
+				'playlist': 'Xlyl2gocSFI',
+				'mute': 1,
+				'playsinline': 1,
+				'rel': 0,
+				'showinfo': 0
+			},
+			events: {
+				'onReady': onPlayerReady
+			}
+		});
+	}
+
+	function onPlayerReady(event) {
+		event.target.playVideo();
+	}
+</script>
 
 <div class="fs-me">
 

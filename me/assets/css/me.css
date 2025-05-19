@@ -1,9 +1,9 @@
 /*
-Template Name: Me
-Author: One Page Love
-Author URI: https://onepagelove.com
-Template URI: https://onepagelove.com/me
-Description: Me is a slick, personal layout for any individual wanting a minimal online presence. Features include a big background image, logo, bio and icons.
+Template Name: Content Creator
+Author: JeremieCode Agency
+Author URI: https://jeremiecode.fr
+Template URI: https://jeremiecode.fr
+Description: Content Creator is a slick, personal layout for any individual wanting a minimal online presence. Features include a big background image, logo, bio and icons.
 Version: 0.2.2
 */
 /* -- CSS Reset -- */
@@ -111,7 +111,7 @@ body.page-template-page-fullsingle-me {
   letter-spacing: -0.5px;
   color: #999999;
   /* background-image: url("../../images/background-OLD.jpg"); */
-  background-image: url("../../images/background.png");
+  background-image: url("../../images/background-test-2.png");
   background-position: center center;
   background-size: cover; }
   body.page-template-page-fullsingle-me p {
@@ -269,7 +269,18 @@ body.page-template-page-fullsingle-me.me-video {
     position: absolute;
     z-index: 0;
     width: 100vw;
-    height: 100vh; }
+    height: 100vh;
+  }
+  body.page-template-page-fullsingle-me.me-video #player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 56.25vw; /* Ratio 16:9 */
+    min-height: 100vh;
+    min-width: 177.77vh; /* Ratio 16:9 */
+  }
   body.page-template-page-fullsingle-me.me-video video.video {
     -o-object-fit: cover;
        object-fit: cover;
@@ -289,9 +300,11 @@ body.page-template-page-fullsingle-me.me-video {
     height: 56.25vw;
     width: 100vw; }
     @media (max-aspect-ratio: 16 / 9) {
-      body.page-template-page-fullsingle-me.me-video .video-container {
+      body.page-template-page-fullsingle-me.me-video #player {
         height: 100vh;
-        width: 177.7777777778vh; } }
+        width: 177.77vh;
+      }
+    }
   body.page-template-page-fullsingle-me.me-video .video-container iframe,
   body.page-template-page-fullsingle-me.me-video .video-container object,
   body.page-template-page-fullsingle-me.me-video .video-container embed {
